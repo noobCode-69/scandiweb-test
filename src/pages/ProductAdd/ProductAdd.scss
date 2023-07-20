@@ -1,0 +1,146 @@
+$productAdd-padding: 5rem 1rem;
+$button-color: #e7e9eb;
+$button-color-hover: #c5c5c5;
+
+$select-bg: #e7e9eb;
+
+.selector {
+  &__select {
+    padding: 0.5rem 1.25rem;
+    height: 100%;
+    background-color: $select-bg;
+    outline: none;
+    font-size: 0.9rem;
+    border: none;
+    border-right: 0.5rem solid transparent;
+    border-radius: 0.5rem;
+  }
+}
+
+.productAdd {
+  padding: $productAdd-padding;
+}
+
+.header {
+  &__save,
+  &__cancel {
+    padding: 0.5rem 1.25rem;
+    font-style: inherit;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: $button-color;
+    &:hover {
+      cursor: pointer;
+      background-color: $button-color-hover;
+    }
+  }
+}
+
+.content {
+  padding: $productAdd-padding;
+}
+
+.errors__container {
+  padding-bottom: 2rem;
+  &__ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    color: #f56565;
+    gap: 0.5rem;
+  }
+}
+
+.form {
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  &__attributes {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+  }
+  &__controller {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    &__label {
+      width: 100px;
+    }
+  }
+  input {
+    background-color: inherit;
+    width: 100%;
+    border: none;
+    padding: 0.5rem 1rem;
+    padding-left: 0;
+    border-bottom: 1px solid black;
+    outline: none;
+    font-size: inherit;
+  }
+}
+
+@media (max-width: 768px) {
+  .productAdd,
+  .content {
+    padding: $productAdd-padding;
+  }
+
+  .header {
+    &__save,
+    &__cancel {
+      font-size: 0.8rem;
+      padding: 0.5rem 1rem;
+    }
+    &__heading {
+      font-size: 1rem;
+    }
+  }
+
+  .selector {
+    &__select {
+      font-size: 0.8rem;
+    }
+  }
+
+  .form {
+    input {
+      width: 100%;
+    }
+    &__controller {
+      gap: 1rem;
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .header {
+    &__save,
+    &__cancel {
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+    }
+    &__heading {
+      font-size: 1rem;
+    }
+  }
+
+  .selector {
+    &__select {
+      font-size: 0.9rem;
+    }
+  }
+
+  .form {
+    input {
+      width: 300px;
+    }
+  }
+}

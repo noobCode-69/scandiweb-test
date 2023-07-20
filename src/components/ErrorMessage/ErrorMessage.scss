@@ -1,0 +1,10 @@
+.error_parent {
+  padding: 10rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__header {
+    font-size: 1.25rem;
+  }
+}

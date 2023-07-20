@@ -1,0 +1,23 @@
+$select-bg: #e7e9eb;
+
+.selector {
+  &__select {
+    padding: 0 0.5rem;
+    height: 100%;
+    background-color: $select-bg;
+    outline: none;
+    font-size: 0.9rem;
+    border: none;
+    // just to make a little padding for the  select arrow
+    border-right: 0.5rem solid transparent;
+    border-radius: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .selector {
+    &__select {
+      font-size: 0.8rem;
+    }
+  }
+}

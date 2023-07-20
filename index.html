@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scandiweb</title>
+  </head>
+  <style>
+    #toast-container {
+      position: fixed;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .toast {
+      background-color: #e7e9eb;
+      padding: 8px 16px;
+      margin-bottom: 8px;
+      border-radius: 4px;
+    }
+  </style>
+  <body>
+    <div id="root"></div>
+    <div id="toast-container"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

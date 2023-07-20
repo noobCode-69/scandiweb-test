@@ -1,0 +1,30 @@
+$loading-parent-padding: 10rem 0;
+$spinner-size: 40px;
+$spinner-border-color: #f3f3f3;
+$spinner-border-top-color: grey;
+$spinner-animation-duration: 1s;
+
+.loading_parent {
+  padding: $loading-parent-padding;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__spinner {
+    width: $spinner-size;
+    height: $spinner-size;
+    border-radius: 50%;
+    border: 4px solid $spinner-border-color;
+    border-top: 4px solid $spinner-border-top-color;
+    animation: spin $spinner-animation-duration linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

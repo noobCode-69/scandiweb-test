@@ -1,0 +1,111 @@
+$pdp-padding: 5rem 1rem;
+$header-delete-bg: #e7e9eb;
+$header-delete-hover-bg: #f56565;
+$header-delete-color: white;
+$product-height: 225px;
+$product-outline: 1px solid black;
+$product-checkbox-margin: 0.5rem;
+
+.pdp {
+  padding: $pdp-padding;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__heading {
+    font-size: 1.25rem;
+  }
+
+  &__delete {
+    padding: 0.5rem 1.25rem;
+    font-style: inherit;
+    font-size: 0.9rem;
+    background-color: $header-delete-bg;
+    border: none;
+    border-radius: 0.5rem;
+
+    &:hover {
+      background-color: $header-delete-hover-bg;
+      color: $header-delete-color;
+      cursor: pointer;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      background-color: $header-delete-bg;
+      color: black;
+    }
+  }
+
+  &--right {
+    display: flex;
+    align-items: stretch;
+    gap: 2rem;
+  }
+}
+
+.products {
+  padding: $pdp-padding;
+  list-style-type: none;
+  display: grid;
+  column-gap: 5rem;
+  row-gap: 3rem;
+  justify-items: stretch;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  text-align: center;
+
+  &__product {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $product-height;
+    outline: $product-outline;
+    position: relative;
+
+    &__checkbox {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-top: $product-checkbox-margin;
+      margin-left: $product-checkbox-margin;
+    }
+    &__container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    text-align: center;
+
+    &--right {
+      gap: 1rem;
+    }
+
+    &__delete {
+      padding: 0.5rem 1rem;
+      font-style: inherit;
+      font-size: 0.8rem;
+      width: 100%;
+    }
+
+    &__heading {
+      font-size: 1rem;
+    }
+  }
+
+  .products {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    column-gap: 3rem;
+    row-gap: 2rem;
+    &__product {
+      height: 150px;
+    }
+  }
+}
