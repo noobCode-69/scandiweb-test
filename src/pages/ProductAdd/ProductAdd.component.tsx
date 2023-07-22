@@ -165,7 +165,7 @@ const ProductAdd: React.FC<ProductAddProps> = ({ showToast }) => {
     setLoading(true);
     try {
       await axios.post(
-        "https://unfooling-overlay.000webhostapp.com/",
+        "http://localhost/scandiweb-endpoints/products",
         JSON.stringify(formData),
         {
           headers: {

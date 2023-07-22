@@ -12,7 +12,7 @@ export const fetchProducts = () => {
     });
     try {
       let { data } = await axios.get(
-        "https://unfooling-overlay.000webhostapp.com/"
+        "http://localhost/scandiweb-endpoints/products"
       );
       data = data.map((item: any) => {
         return {
@@ -51,7 +51,7 @@ export const massDeleteProducts = (products: string[]) => {
     });
 
     try {
-      await axios.delete("https://unfooling-overlay.000webhostapp.com/", {
+      await axios.delete("http://localhost/scandiweb-endpoints/products", {
         data: { skus: products },
       });
       dispatch({
