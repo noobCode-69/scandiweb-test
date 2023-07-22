@@ -165,7 +165,7 @@ const ProductAdd: React.FC<ProductAddProps> = ({ showToast }) => {
     setLoading(true);
     try {
       await axios.post(
-        "http://localhost:4000/add-product",
+        "http://localhost/scandiweb-endpoints/products",
         JSON.stringify(formData),
         {
           headers: {

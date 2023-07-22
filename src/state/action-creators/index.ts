@@ -11,10 +11,15 @@ export const fetchProducts = () => {
       type: ActionTypes.FETCH_PRODUCTS,
     });
     try {
-      let { data } = (await axios.get("http://localhost:4000/get-all-products"))
-        .data;
-      data = data.map((obj: any) => {
-        return { ...obj, isSet: false };
+      let { data } = await axios.get(
+        "http://localhost/scandiweb-endpoints/products"
+      );
+      data = data.map((item: any) => {
+        return {
+          ...item,
+          attributes: JSON.parse(item.attributes),
+          isSet: false,
+        };
       });
       dispatch({
         type: ActionTypes.FETCH_PRODUCTS_SUCCESS,
@@ -46,13 +51,10 @@ export const massDeleteProducts = (products: string[]) => {
     });
 
     try {
-      await axios.post(
-        "http://localhost:4000/delete-products",
-        JSON.stringify({ data: products }),
+      await axios.delete(
+        "http://localhost/scandiweb-endpoints/products",
         {
-          headers: {
-            "Content-Type": "application/json",
-          },
+          data: { skus: products },
         }
       );
       dispatch({

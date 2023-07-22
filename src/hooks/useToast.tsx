@@ -16,7 +16,6 @@ interface ToastContainerProps {
 
 const ToastContainer: React.FC<ToastContainerProps> = ({ toasts }) => {
   const toastContainer = document.getElementById("toast-container");
-  console.log({ toastContainer });
   return (
     <>
       {toastContainer &&
