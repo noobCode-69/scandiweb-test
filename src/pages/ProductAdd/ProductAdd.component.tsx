@@ -23,7 +23,7 @@ const attributeMap: { [key: string]: Attribute[] } = {
   DVD: [{ label: "Size", value: "", unit: "MB" }],
   Furniture: [
     { label: "Length", value: "", unit: "CM" },
-    { label: "Breadth", value: "", unit: "CM" },
+    { label: "Width", value: "", unit: "CM" },
     { label: "Height", value: "", unit: "CM" },
   ],
   Book: [{ label: "Weight", value: "", unit: "KG" }],
@@ -46,9 +46,9 @@ const attributeValidationMap: {
     validate: (value: string) => /^\d+(\.\d+)?$/.test(value),
     message: "Length should be a number.",
   },
-  Breadth: {
+  Width: {
     validate: (value: string) => /^\d+(\.\d+)?$/.test(value),
-    message: "Breadth should be a number.",
+    message: "Width should be a number.",
   },
   Height: {
     validate: (value: string) => /^\d+(\.\d+)?$/.test(value),
@@ -63,7 +63,7 @@ const attributeValidationMap: {
 const attributeIdMap: { [key: string]: string } = {
   Size: "size",
   Length: "length",
-  Breadth: "breadth",
+  Width: "width",
   Height: "height",
   Weight: "weight",
 };
