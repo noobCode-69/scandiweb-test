@@ -127,6 +127,8 @@ const PDP: React.FC<PDPPropsTypes> = ({
     );
   };
 
+  
+
   const renderProductList = (): JSX.Element => {
     if (loading) {
       return renderLoading();
@@ -135,6 +137,10 @@ const PDP: React.FC<PDPPropsTypes> = ({
     if (error) {
       // passing this coz type-guards make sure "error" is string and not "error | null"
       return renderError(error);
+    }
+
+    if (products.length == 0) {
+      return renderError("No Products to display.");
     }
 
     return (
