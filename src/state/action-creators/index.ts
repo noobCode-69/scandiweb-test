@@ -11,9 +11,8 @@ export const fetchProducts = () => {
       type: ActionTypes.FETCH_PRODUCTS,
     });
     try {
-      let { data } = await axios.get(
-        "http://localhost/scandiweb-endpoints/products"
-      );
+      let { data } = await axios.get(import.meta.env.VITE_HOST_URL);
+
       data = data.map((item: any) => {
         return {
           ...item,
@@ -51,7 +50,7 @@ export const massDeleteProducts = (products: string[]) => {
     });
 
     try {
-      await axios.delete("http://localhost/scandiweb-endpoints/products", {
+      await axios.delete(import.meta.env.VITE_HOST_URL, {
         data: { skus: products },
       });
       dispatch({
