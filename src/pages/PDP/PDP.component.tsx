@@ -38,7 +38,7 @@ const PDP: React.FC<PDPPropsTypes> = ({
       .filter((product) => product.isSet)
       .map((product) => product.sku);
 
-    const isAnythingToDelete: boolean = loading || productToDelete.length !== 0;
+    const isAnythingToDelete: boolean = !loading || productToDelete.length !== 0;
 
     return (
       <div className="header">
